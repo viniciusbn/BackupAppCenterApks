@@ -1,0 +1,38 @@
+import os
+
+# Base URL for the App Center API.
+URL_BASE = f'https://api.appcenter.ms/v0.1'
+
+# Token for authenticating with the App Center API.
+API_TOKEN = ''
+
+# Name of the organization in the App Center.
+ORG_NAME = ''
+
+# If you want to download specific apps, set the app names here. Put the app names in a list, or leave it empty.
+# APP_FILTER = {'App1', 'App2'}
+APP_FILTER = {}
+
+# Local directory for storing files during processing.
+WORKDIR = os.path.expanduser('~/temp/AppCenter')
+
+# Folder structure MASK
+# {app_name}/{release_date}_{release_id}_v{release_version}/{app_name}_v{release_version}.apk
+# {app_name}/{release_date}_{release_id}_v{release_version}/RELEASE_NOTES.txt
+def get_base_folder(app_name, release_date, release_id, release_version):
+    return f'{app_name}/{release_date}_{release_id}_v{release_version}'
+
+# Maximum number of attempts for downloading a file.
+DOWNLOAD_MAX_ATTEMPTS = 3
+
+# Maximum number of attempts for uploading a file.
+UPLOAD_MAX_ATTEMPTS = 3
+
+# AWS credentials.
+# If using a profile, leave AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_SESSION_TOKEN, and AWS_REGION empty.
+AWS_ACCESS_KEY_ID = ''
+AWS_SECRET_ACCESS_KEY = ''
+AWS_SESSION_TOKEN = ''
+AWS_BUCKET_NAME = ''
+AWS_REGION  = ''
+AWS_PROFILE = ''
